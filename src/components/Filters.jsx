@@ -3,9 +3,18 @@ export default function Filters({
     setCity,
     maxPrice,
     setMaxPrice,
+    search,
+    setSearch
 }) {
     return(
         <div className="filters">
+
+            <input
+                type="text"
+                placeholder="Search property by name or city"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+            />
 
             <select value={city} onChange={(e) => setCity(e.target.value)}>
                 <option value="">All cities</option>

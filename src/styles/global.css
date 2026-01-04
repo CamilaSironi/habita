@@ -57,3 +57,7 @@
   font-family: inherit;
 }
 
+.filters input[type="text"] {
+  flex: 1;
+}
+
