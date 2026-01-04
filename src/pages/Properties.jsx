@@ -1,9 +1,10 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { properties } from "../data/properties";
 import PropertyCard from "../components/PropertyCard";
 import Filters from "../components/Filters";
 import { useFilters } from "../context/FilterContext";
 import PropertyFilters from "../components/PropertyFilters";
+import PropertyCardSkeleton from "../components/PropertyCardSkeleton";
 
 export default function Properties() {
 
@@ -12,6 +13,8 @@ export default function Properties() {
   const [search, setSearch] = useState("");
   const [sort, setSort] = useState("");
   const { type } = useFilters();
+
+  const [loading, setLoading] = useState(true);
 
   const filteredProperties = useMemo(() => {
     let result = properties.filter((property) => {
@@ -44,6 +47,13 @@ export default function Properties() {
 
   }, [city, maxPrice, search, sort, type]);
 
+  useEffect(() => {
+  const timer = setTimeout(() => {
+    setLoading(false);
+  }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <section className="properties">
       <h2>Available Properties</h2>
@@ -62,7 +72,11 @@ export default function Properties() {
       <PropertyFilters />
 
       <div className="properties-grid">
-        {filteredProperties.length === 0 ? (
+        {loading ? (
+          Array.from({ length: 6 }).map((_, i) => (
+            <PropertyCardSkeleton key={i} />
+          ))
+        ) : filteredProperties.length === 0 ? (
           <p>No properties found.</p>
         ) : (
         filteredProperties.map((property) => (

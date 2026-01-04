@@ -4,7 +4,7 @@ export default function PropertyFilters() {
   const { type, setType, clearFilters } = useFilters();
 
   return (
-    <div className="filters">
+    <div className="property-filters">
       <button
         className={type === "house" ? "active" : ""}
         onClick={() => setType("house")}
