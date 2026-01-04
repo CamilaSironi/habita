@@ -44,3 +44,16 @@
   margin-bottom: 1rem;
 }
 
+/* Filters Style */
+
+.filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.filters select, .filters input { 
+  padding: 0.6rem 0.8rem;
+  font-family: inherit;
+}
+
