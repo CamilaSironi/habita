@@ -4,7 +4,9 @@ export default function Filters({
     maxPrice,
     setMaxPrice,
     search,
-    setSearch
+    setSearch,
+    sort,
+    setSort
 }) {
     return(
         <div className="filters">
@@ -29,6 +31,13 @@ export default function Filters({
                 value={maxPrice}
                 onChange={(e) => setMaxPrice(e.target.value)}
             />
+
+            <select value={sort} onChange={(e) => setSort(e.target.value)}>
+                <option value="">Sort by</option>
+                <option value="price-asc">Price: low to high</option>
+                <option value="price-desc">Price: high to low</option>
+            </select>
+
         </div>
     );
 }

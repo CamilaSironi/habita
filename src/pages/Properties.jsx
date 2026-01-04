@@ -8,12 +8,15 @@ export default function Properties() {
   const [city, setCity] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
   const [search, setSearch] = useState("");
+  const [sort, setSort] = useState("");
 
   const filteredProperties = useMemo(() => {
-    return properties.filter((property) => {
+    let result = properties.filter((property) => {
 
       const matchesCity = city === "" || property.location.city === city;
+
       const matchesPrice = maxPrice === "" || property.price <= Number(maxPrice);
+
       const matchesSearch =
         search === "" ||
         property.title.toLowerCase().includes(search.toLowerCase()) ||
@@ -23,7 +26,18 @@ export default function Properties() {
 
       return matchesCity && matchesPrice && matchesSearch;
     });
-  }, [city, maxPrice, search]);
+
+    if (sort === "price-asc") {
+      result = [...result].sort((a, b) => a.price - b.price);
+    }
+
+    if (sort === "price-desc") {
+      result = [...result].sort((a, b) => b.price - a.price);
+    }
+
+    return result;
+
+  }, [city, maxPrice, search, sort]);
 
   return (
     <section className="properties">
@@ -36,6 +50,8 @@ export default function Properties() {
         setMaxPrice={setMaxPrice}
         search={search}
         setSearch={setSearch}
+        sort={sort}
+        setSort={setSort}
       />
 
       <div className="properties-grid">
