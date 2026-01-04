@@ -2,6 +2,8 @@ import { useState, useMemo } from "react";
 import { properties } from "../data/properties";
 import PropertyCard from "../components/PropertyCard";
 import Filters from "../components/Filters";
+import { useFilters } from "../context/FilterContext";
+import PropertyFilters from "../components/PropertyFilters";
 
 export default function Properties() {
 
@@ -9,9 +11,12 @@ export default function Properties() {
   const [maxPrice, setMaxPrice] = useState("");
   const [search, setSearch] = useState("");
   const [sort, setSort] = useState("");
+  const { type } = useFilters();
 
   const filteredProperties = useMemo(() => {
     let result = properties.filter((property) => {
+
+      const matchesType = !type || property.type === type;
 
       const matchesCity = city === "" || property.location.city === city;
 
@@ -24,7 +29,7 @@ export default function Properties() {
           .toLowerCase()
           .includes(search.toLowerCase());
 
-      return matchesCity && matchesPrice && matchesSearch;
+      return matchesType && matchesCity && matchesPrice && matchesSearch;
     });
 
     if (sort === "price-asc") {
@@ -37,7 +42,7 @@ export default function Properties() {
 
     return result;
 
-  }, [city, maxPrice, search, sort]);
+  }, [city, maxPrice, search, sort, type]);
 
   return (
     <section className="properties">
@@ -53,6 +58,8 @@ export default function Properties() {
         sort={sort}
         setSort={setSort}
       />
+
+      <PropertyFilters />
 
       <div className="properties-grid">
         {filteredProperties.length === 0 ? (
