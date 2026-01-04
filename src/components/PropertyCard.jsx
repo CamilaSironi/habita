@@ -1,8 +1,21 @@
 import { Link } from "react-router-dom";
+import { useFavorites } from "../context/FavoritesContext";
 
 export default function PropertyCard({ property }) {
+
+  const {toggleFavorite, isFavorite} = useFavorites();
+
   return (
     <article className="property-card">
+
+      <button
+        className={`favorite-btn ${isFavorite(property.id) ? "active" : ""}`}
+        onClick={() => toggleFavorite(property.id)}
+        aria-label="Toggle favorite"
+      >
+        ♥
+      </button>
+
       <img src={property.image} alt={property.title} />
 
       <div className="property-info">

@@ -5,7 +5,10 @@
   padding: 2rem;
 }
 
+/* PropertyCard styles */
+
 .property-card {
+  position: relative;
   background: white;
   border-radius: 6px;
   overflow: hidden;
@@ -22,6 +25,29 @@
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
+}
+
+.favorite-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  border: none;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.favorite-btn:hover {
+  transform: scale(1.1);
+}
+
+.favorite-btn.active {
+  background: #e74c3c;
+  color: white;
 }
 
 /* PropertyDetail styles*/
