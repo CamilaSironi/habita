@@ -6,7 +6,32 @@ export default function PropertyCard({ property }) {
   const {toggleFavorite, isFavorite} = useFavorites();
 
   return (
-    <article className="property-card">
+    <article className="card property-card">
+      <Link to={`/properties/${property.id}`} className="card-link">
+
+        <div className="card-image">
+          <img
+            src={property.image}
+            alt={property.title}
+            loading="lazy"
+          />
+        </div>
+
+        <div className="card-content">
+          <p className="card-price">
+            USD${property.price.toLocaleString()}
+          </p>
+
+          <h3 className="card-title">
+            {property.title}
+          </h3>
+
+          <p className="card-meta">
+            {property.location.city} · {property.type}
+          </p>
+        </div>
+
+      </Link>
 
       <button
         className={`favorite-btn ${isFavorite(property.id) ? "active" : ""}`}
@@ -16,27 +41,6 @@ export default function PropertyCard({ property }) {
         ♥
       </button>
 
-      <img src={property.image} alt={property.title} />
-
-      <div className="property-info">
-        <h3>{property.title}</h3>
-
-        <p>
-          {property.location.city}, {property.location.country}
-        </p>
-
-        <p>
-          {property.bedrooms} bedrooms · {property.area} m²
-        </p>
-
-        <strong>
-          {property.currency} {property.price}
-        </strong>
-
-        <Link to={`/properties/${property.id}`}>
-          View details
-        </Link>
-      </div>
     </article>
   );
 }

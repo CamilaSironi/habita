@@ -1,9 +1,13 @@
 export default function PropertyCardSkeleton() {
   return (
-    <div className="property-card skeleton">
-      <div className="skeleton-img" />
-      <div className="skeleton-text short" />
-      <div className="skeleton-text" />
-    </div>
+    <article className="property-card skeleton">
+      <div className="image-skeleton" />
+
+      <div className="content">
+        <div className="line title" />
+        <div className="line location" />
+        <div className="line price" />
+      </div>
+    </article>
   );
 }
