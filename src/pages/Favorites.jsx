@@ -1,5 +1,6 @@
 import { useFavorites } from "../context/FavoritesContext";
 import { properties } from "../data/properties";
+import MainLayout from "../layouts/MainLayout";
 import PropertyCard from "../components/PropertyCard";
 
 export default function Favorites() {
@@ -14,13 +15,15 @@ export default function Favorites() {
   }
 
   return (
-    <section>
-      <h2>Your favorites</h2>
-      <div className="grid">
-        {favoriteProperties.map((property) => (
-          <PropertyCard key={property.id} property={property} />
-        ))}
-      </div>
-    </section>
+    <MainLayout>
+      <section>
+        <h2>Your favorites</h2>
+        <div className="grid">
+          {favoriteProperties.map((property) => (
+            <PropertyCard key={property.id} property={property} />
+          ))}
+        </div>
+      </section>
+    </MainLayout>
   );
 }

@@ -3,7 +3,11 @@ import { createContext, useContext, useState } from "react";
 const FilterContext = createContext();
 
 export function FilterProvider({ children }) {
-  const [type, setType] = useState(null);
+  const [city, setCity] = useState("");
+  const [maxPrice, setMaxPrice] = useState("");
+  const [search, setSearch] = useState("");
+  const [sort, setSort] = useState("");
+  const [type, setType] = useState("");
 
   const clearFilters = () => {
     setType(null);
@@ -11,7 +15,19 @@ export function FilterProvider({ children }) {
 
   return (
     <FilterContext.Provider
-      value={{ type, setType, clearFilters }}
+      value={{
+        city,
+        setCity,
+        maxPrice,
+        setMaxPrice,
+        search,
+        setSearch,
+        sort,
+        setSort,
+        type,
+        setType,
+        clearFilters
+      }}
     >
       {children}
     </FilterContext.Provider>

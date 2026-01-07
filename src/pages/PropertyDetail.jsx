@@ -1,5 +1,6 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import {properties} from "../data/properties";
+import MainLayout from "../layouts/MainLayout";
 
 export default function PropertyDetail() {
   const { id } = useParams();
@@ -19,11 +20,14 @@ export default function PropertyDetail() {
         >
         <h2>Property not found</h2>
         <p>The property you are looking for does not exist.</p>
+        <Link to="/">Home</Link>
       </section>
     );
   }
 
   return (
+    <MainLayout> 
+
     <section className="property-detail">
       <img
         src={property.image}
@@ -45,5 +49,7 @@ export default function PropertyDetail() {
         <p>{property.description}</p>
       </div>
     </section>
+
+    </MainLayout>
   );
 }
