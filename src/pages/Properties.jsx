@@ -19,9 +19,7 @@ export default function Properties() {
   return (
     <MainLayout>
 
-      <section className="controls">
-        <Filters />
-      </section>
+      <Filters />
 
       <section className="properties">
         <h2>Available Properties</h2>
