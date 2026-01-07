@@ -28,6 +28,8 @@ export default function Filters() {
 
                 <select value={city} onChange={(e) => setCity(e.target.value)}>
                     <option value="">All cities</option>
+                    <option value="Buenos Aires">Buenos Aires</option> 
+                    <option value="Necochea">Necochea</option> 
                     <option value="Búzios">Búzios</option>  
                     <option value="Rio de Janeiro">Rio de Janeiro</option>
                     <option value="São Paulo">São Paulo</option>

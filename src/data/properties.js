@@ -13,7 +13,7 @@ export const properties = [
     bathrooms: 1,
     area: 68,
     image:
-      "https://images.unsplash.com/photo-1502673530728-f79b4cab31b1",
+      "https://images.unsplash.com/photo-1502005097973-6a7082348e28?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description:
       "Bright and modern apartment located in the heart of Palermo, close to cafes and parks."
   },
@@ -52,5 +52,73 @@ export const properties = [
       "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267",
     description:
       "Minimalist loft in a vibrant neighborhood, perfect for professionals."
-  }
+  },
+  {
+    id: "loft-004",
+    title: "Stylish Loft in City Center",
+    location: {
+      city: "São Paulo",
+      country: "Brazil",
+    },
+    price: 2100,
+    currency: "USD",
+    type: "loft",
+    bedrooms: 2,
+    bathrooms: 1,
+    area: 68,
+    image: "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    description:
+      "Stylish loft located in the heart of the city. Ideal for professionals and creatives.",
+  },
+  {
+    id: "apt-005",
+    title: "Compact Apartment for Short Stays",
+    location: {
+      city: "Rio de Janeiro",
+      country: "Brazil",
+    },
+    price: 1400,
+    currency: "USD",
+    type: "apartment",
+    bedrooms: 1,
+    bathrooms: 1,
+    area: 55,
+    image: "https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1174&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    description:
+      "Functional apartment perfect for short stays or digital nomads.",
+  },
+  {
+    id: "house-006",
+    title: "Beach House with Outdoor Area",
+    location: {
+      city: "Búzios",
+      country: "Brazil",
+    },
+    price: 3200,
+    currency: "USD",
+    type: "house",
+    bedrooms: 2,
+    bathrooms: 2,
+    area: 54,
+    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    description:
+      "Relaxed beach house with outdoor dining area and lots of natural light.",
+  },
+  {
+    id: "villa-007",
+    title: "Luxury Villa with Ocean View",
+    location: {
+      city: "Necochea",
+      country: "Argentina",
+    },
+    price: 5200,
+    currency: "USD",
+    type: "villa",
+    bedrooms: 6,
+    bathrooms: 4,
+    area: 5,
+    image: "https://plus.unsplash.com/premium_photo-1687960117069-567a456fe5f3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    description:
+      "Exclusive villa with panoramic ocean views, private pool and premium finishes.",
+  },
 ];

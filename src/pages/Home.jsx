@@ -19,8 +19,7 @@ export default function Home() {
             />
           ))}
         </div>
-
-        <Link to={'/properties'} className="link">View All</Link>
+        
       </section>
     </MainLayout>
   );

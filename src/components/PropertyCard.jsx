@@ -19,7 +19,7 @@ export default function PropertyCard({ property }) {
 
         <div className="card-content">
           <p className="card-price">
-            USD${property.price.toLocaleString()}
+            {property.currency}${property.price.toLocaleString()}
           </p>
 
           <h3 className="card-title">
