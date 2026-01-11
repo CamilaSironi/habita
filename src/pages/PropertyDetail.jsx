@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import {properties} from "../data/properties";
 import MainLayout from "../layouts/MainLayout";
+import ContactForm from "../components/ContactForm";
 
 export default function PropertyDetail() {
   const { id } = useParams();
@@ -49,6 +50,8 @@ export default function PropertyDetail() {
         <p>{property.description}</p>
       </div>
     </section>
+
+    <ContactForm property={property} />
 
     </MainLayout>
   );
