@@ -4,7 +4,9 @@ export const properties = [
     title: "Modern Apartment in Palermo",
     location: {
       city: "Buenos Aires",
-      country: "Argentina"
+      country: "Argentina",
+      lat: -34.603684,
+      lng: -58.381559
     },
     price: 1200,
     currency: "USD",
@@ -22,7 +24,9 @@ export const properties = [
     title: "Cozy Beach House",
     location: {
       city: "Búzios",
-      country: "Brazil"
+      country: "Brazil",
+      lat: -22.7576,
+      lng: -41.8860
     },
     price: 1800,
     currency: "USD",
@@ -40,7 +44,9 @@ export const properties = [
     title: "Minimal Loft",
     location: {
       city: "São Paulo",
-      country: "Brazil"
+      country: "Brazil",
+      lat: -23.55052,
+      lng: -46.633308
     },
     price: 1000,
     currency: "USD",
@@ -59,6 +65,8 @@ export const properties = [
     location: {
       city: "São Paulo",
       country: "Brazil",
+      lat: -23.55052,
+      lng: -46.633308
     },
     price: 2100,
     currency: "USD",
@@ -76,6 +84,8 @@ export const properties = [
     location: {
       city: "Rio de Janeiro",
       country: "Brazil",
+      lat: -22.906847,
+      lng: -43.172897
     },
     price: 1400,
     currency: "USD",
@@ -93,6 +103,8 @@ export const properties = [
     location: {
       city: "Búzios",
       country: "Brazil",
+      lat: -22.7576,
+      lng: -41.8860
     },
     price: 3200,
     currency: "USD",
@@ -110,6 +122,8 @@ export const properties = [
     location: {
       city: "Necochea",
       country: "Argentina",
+      lat: -38.554496,
+      lng: -58.739608
     },
     price: 5200,
     currency: "USD",
